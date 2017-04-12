@@ -1,4 +1,4 @@
-package de.motius.picker;
+package com.wheelpickerandroid;
 
 import android.graphics.Color;
 import com.facebook.react.bridge.*;
