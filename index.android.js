@@ -11,21 +11,21 @@ import {
   Text,
   View
 } from 'react-native';
+import WheelPicker from './js/components/WheelPicker'
 
-export default class WheelPickerAndroid extends Component {
+export default class TestApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>
+            This is a WheelPicker!
+          </Text>
+        </View>
+        <WheelPicker data={[1,2,3,4,5,6,7,8,9,10]}
+                     onValueChange={() => {}}
+                     selectedValue={0}
+                     style={styles.picker}/>
       </View>
     );
   }
@@ -38,16 +38,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  titleContainer: {
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    color: 'black',
+    margin: 20,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  picker: {
+    flex: 1,
   },
 });
 
-AppRegistry.registerComponent('WheelPickerAndroid', () => WheelPickerAndroid);
+AppRegistry.registerComponent('WheelPickerAndroid', () => TestApp);
